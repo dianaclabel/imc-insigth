@@ -15,30 +15,41 @@ export const CalculateImc = () => {
 
   return (
     <>
-      <h1>IMC </h1>
-      <form onSubmit={handleImc}>
-        <label>
-          Talla (m)
-          <input
-            type="text"
-            value={Talla}
-            onChange={(event) => {
-              setTalla(event.target.value);
-            }}
-          />
-        </label>
-
-        <label>
-          Peso (kg)
-          <input
-            type="text"
-            value={Peso}
-            onChange={(event) => setPeso(event.target.value)}
-          />
-        </label>
-        <button type="submit">Calcular</button>
-      </form>
-      <h3>{Imc}</h3>
+      <div className="d-flex align-items-center min-h-100vh">
+        <div className="container text-center">
+          <h1>IMC </h1>
+          <form onSubmit={handleImc}>
+            <div>
+              <label>
+                Talla (m)
+                <input
+                  type="text"
+                  value={Talla}
+                  className="form-control"
+                  onChange={(event) => {
+                    setTalla(event.target.value);
+                  }}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                Peso (kg)
+                <input
+                  type="text"
+                  value={Peso}
+                  className="form-control"
+                  onChange={(event) => setPeso(event.target.value)}
+                />
+              </label>
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Calcular
+            </button>
+          </form>
+          <h3>{Imc}</h3>
+        </div>
+      </div>
     </>
   );
 };
